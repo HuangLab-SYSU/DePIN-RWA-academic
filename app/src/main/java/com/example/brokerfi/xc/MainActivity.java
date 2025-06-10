@@ -29,10 +29,10 @@ import java.util.concurrent.atomic.AtomicReference;
 public class MainActivity extends AppCompatActivity {
     private ImageView menu;
     private RelativeLayout action_bar;
-//    private ImageView buy;
-//    private ImageView send;
-//    private ImageView swap;
-//    private ImageView broker;
+    private ImageView buy;
+    private ImageView send;
+    private ImageView swap;
+    private ImageView broker;
     private ImageView nft;
     private LinearLayout support;
     private NavigationHelper navigationHelper;
@@ -78,11 +78,11 @@ public class MainActivity extends AppCompatActivity {
     private void intView() {
         menu = findViewById(R.id.menu);
         action_bar = findViewById(R.id.action_bar);
-//        buy = findViewById(R.id.buy);
-//        send = findViewById(R.id.send);
-//        swap = findViewById(R.id.swap);
-//        broker = findViewById(R.id.broker);
-//        support = findViewById(R.id.support);
+        buy = findViewById(R.id.buy);
+        send = findViewById(R.id.send);
+        swap = findViewById(R.id.swap);
+        broker = findViewById(R.id.broker);
+        support = findViewById(R.id.support);
         accountstate=findViewById(R.id.WTextview);
         tsv_dollar=findViewById(R.id.tsv_dollar);
         nft = findViewById(R.id.nft);
@@ -91,33 +91,33 @@ public class MainActivity extends AppCompatActivity {
     private void intEvent(){
 
         navigationHelper = new NavigationHelper(menu, action_bar,this);
-//        buy.setOnClickListener(view -> {
-//            Intent intent = new Intent();
-//            intent.setClass(MainActivity.this,FaucetActivity.class);
-//            //跳转
-//            startActivity(intent);
-//        });
-//
-//        send.setOnClickListener(view -> {
-//            Intent intent = new Intent();
-//            intent.setClass(MainActivity.this,SendActivity.class);
-//            //跳转
-//            startActivity(intent);
-//        });
-//
-//        swap.setOnClickListener(view -> {
-//            Intent intent = new Intent();
-//            intent.setClass(MainActivity.this,SwapActivity.class);
-//            //跳转
-//            startActivity(intent);
-//        });
-//
-//        broker.setOnClickListener(view -> {
-//            Intent intent = new Intent();
-//            intent.setClass(MainActivity.this,BrokerActivity.class);
-//            //跳转
-//            startActivity(intent);
-//        });
+        buy.setOnClickListener(view -> {
+            Intent intent = new Intent();
+            intent.setClass(MainActivity.this,FaucetActivity.class);
+            //跳转
+            startActivity(intent);
+        });
+
+        send.setOnClickListener(view -> {
+            Intent intent = new Intent();
+            intent.setClass(MainActivity.this,SendActivity.class);
+            //跳转
+            startActivity(intent);
+        });
+
+        swap.setOnClickListener(view -> {
+            Intent intent = new Intent();
+            intent.setClass(MainActivity.this,SwapActivity.class);
+            //跳转
+            startActivity(intent);
+        });
+
+        broker.setOnClickListener(view -> {
+            Intent intent = new Intent();
+            intent.setClass(MainActivity.this,BrokerActivity.class);
+            //跳转
+            startActivity(intent);
+        });
         nft.setOnClickListener(view -> {
             Intent intent = new Intent();
             intent.setClass(MainActivity.this,NFTMainActivity.class);
