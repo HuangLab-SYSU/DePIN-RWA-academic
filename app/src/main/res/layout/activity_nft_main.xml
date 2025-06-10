@@ -120,7 +120,6 @@
                     android:layout_columnWeight="1"
                     android:layout_gravity="center_horizontal"
                     android:clickable="true"
-                    android:text="Buy"
                     android:textColor="#000000"
                     android:textSize="16sp" />
 
@@ -137,7 +136,7 @@
             android:layout_below="@+id/icon_four"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="48dp"
-
+            android:text="Buy"
             android:clickable="true"
             android:gravity="center"
             android:orientation="horizontal"/>
