@@ -31,7 +31,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/work_sans_black"
-                    android:text="Mint NFT"
+                    android:text="Mint RWA"
                     android:textColor="#000000"
                     android:textSize="30sp"
                     android:textStyle="bold" />
@@ -42,7 +42,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/minttitle"
                     android:layout_marginTop="8dp"
-                    android:text="Upload an image to create your unique NFT."
+                    android:text="Upload an image to create your unique RWA."
                     android:textColor="#000000"
                     android:textSize="14sp" />
 
@@ -120,7 +120,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="NFT name"
+                            android:text="RWA name"
                             android:textColor="#000000"
                             android:textSize="16sp" />
 
@@ -139,7 +139,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="12dp"
-                            android:text="NFT shares"
+                            android:text="RWA shares"
                             android:textColor="#000000"
                             android:textSize="16sp" />
 
@@ -147,7 +147,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="Create shared NFT:\nEnter shares (1=sole owner, >1 splits to X shares)"
+                            android:text="Create shared RWA:\nEnter shares (1=sole owner, >1 splits to X shares)"
                             android:textColor="#6B6B6B"
                             android:textSize="15sp" />
 
@@ -169,7 +169,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:text="*This platform implements 'fractional NFT ownership':\n- Divide NFTs into multiple shares\n- Enable multi-user co-ownership\n- Allow per-batch pricing"
+                            android:text="*This platform implements 'fractional RWA ownership':\n- Divide RWAs into multiple shares\n- Enable multi-user co-ownership\n- Allow per-batch pricing"
                             android:textColor="#6B6B6B"
                             android:textSize="13sp" />
 

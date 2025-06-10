@@ -264,13 +264,18 @@ public class MyUtil {
                 Gson gson = new Gson();
                 ReturnAccountState returnAccountState = gson.fromJson(new String(bytes), ReturnAccountState.class);
                 if (returnAccountState != null) {
-                    BigDecimal a = new BigDecimal(returnAccountState.getBalance());
-                    BigDecimal b = new BigDecimal("1000000000000000000");
-                    BigDecimal divide = a.divide(b);
-                    returnAccountState.setBalance(divide.toString());
+                    if (returnAccountState.getBalance()==null|| returnAccountState.getBalance().isEmpty()){
+                        returnAccountState.setBalance("Loading...");
+                    }else {
+                        BigDecimal a = new BigDecimal(returnAccountState.getBalance());
+                        BigDecimal b = new BigDecimal("1000000000000000000");
+                        BigDecimal divide = a.divide(b);
+                        returnAccountState.setBalance(divide.toString());
+                    }
                 }
                 return returnAccountState;
             } catch (Exception e) {
+                System.out.println(queryReq);
                 e.printStackTrace();
             }
             return null;
@@ -811,6 +816,17 @@ class QueryReq {
 
     public void setUUID(String UUID) {
         this.UUID = UUID;
+    }
+
+    @Override
+    public String toString() {
+        return "QueryReq{" +
+                "PublicKey='" + PublicKey + '\'' +
+                ", RandomStr='" + RandomStr + '\'' +
+                ", Sign1='" + Sign1 + '\'' +
+                ", Sign2='" + Sign2 + '\'' +
+                ", UUID='" + UUID + '\'' +
+                '}';
     }
 }
 

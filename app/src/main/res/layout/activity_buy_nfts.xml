@@ -24,7 +24,7 @@
             android:layout_marginTop="16dp"
             android:fontFamily="@font/work_sans_black"
             android:paddingHorizontal="16dp"
-            android:text="Buy NFTs"
+            android:text="Buy RWAs"
             android:textColor="#000000"
             android:textSize="30sp"
             android:textStyle="bold" />
@@ -35,7 +35,7 @@
             android:layout_marginTop="6.5dp"
             android:layout_marginBottom="4dp"
             android:paddingHorizontal="16dp"
-            android:text="You can buy NFTs here."
+            android:text="You can buy RWAs here."
             android:textColor="#000000"
             android:textSize="14sp" />
 

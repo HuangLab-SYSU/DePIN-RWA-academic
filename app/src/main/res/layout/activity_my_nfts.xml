@@ -24,7 +24,7 @@
             android:layout_marginTop="16dp"
             android:fontFamily="@font/work_sans_black"
             android:paddingHorizontal="16dp"
-            android:text="My NFTs"
+            android:text="My RWAs"
             android:textColor="#000000"
             android:textSize="30sp"
             android:textStyle="bold" />
@@ -35,7 +35,7 @@
             android:layout_marginTop="6.5dp"
             android:layout_marginBottom="4dp"
             android:paddingHorizontal="16dp"
-            android:text="Your owned NFTs are listed here."
+            android:text="Your owned RWAs are listed here."
             android:textColor="#000000"
             android:textSize="14sp" />
 

@@ -22,6 +22,9 @@ import com.example.brokerfi.xc.menu.NavigationHelper;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.atomic.AtomicReference;
+
 
 public class MainActivity extends AppCompatActivity {
     private ImageView menu;
@@ -133,36 +136,40 @@ public class MainActivity extends AppCompatActivity {
         }else {
             i = Integer.parseInt(acc);
         }
-        if (account != null) {
+        if (account != null&&!account.isEmpty()) {
             String[] split = account.split(";");
             String privatekey = split[i];
 
 
-            new Thread(()->{
-                ReturnAccountState returnAccountState = null;
+            AtomicReference<ReturnAccountState>  returnAccountState=  new AtomicReference<>();
+            CountDownLatch latch = new CountDownLatch(1);
+            MyUtil.service.execute(()->{
                 try {
-                    returnAccountState=MyUtil.GetAddrAndBalance(privatekey);
-                    ReturnAccountState finalReturnAccountState = returnAccountState;
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            if (finalReturnAccountState !=null){
-                                String balance = finalReturnAccountState.getBalance();
-                                Log.d("balance:",balance);
-                                updateAccountStatusText(balance);
-                            }
-                        }
-                    });
+                    returnAccountState.set(MyUtil.GetAddrAndBalance(privatekey));
                 }catch (Exception e){
                     e.printStackTrace();
                 }finally {
-
+                    latch.countDown();
                 }
+            });
 
 
+            try {
+                latch.await();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
 
-            }).start();
 
+            runOnUiThread(() -> {
+                if (returnAccountState.get() !=null){
+                    String balance = returnAccountState.get().getBalance();
+                    Log.d("balance:",balance);
+                    updateAccountStatusText(balance);
+                }else {
+                    Log.d("balance is ","null");
+                }
+            });
 
         }
     }

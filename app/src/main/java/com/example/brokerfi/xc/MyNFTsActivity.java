@@ -74,12 +74,12 @@ public class MyNFTsActivity extends AppCompatActivity{
             int position = adapter.getSelectedPosition();
 
             if (selected == null) {
-                Toast.makeText(this, "⚠️ 请先选择要上架的NFT", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "⚠️ 请先选择要上架的RWA", Toast.LENGTH_SHORT).show();
                 return;
             }
 
             if (selected.isListed()) {
-                Toast.makeText(this, "此NFT已上架", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "此RWA已上架", Toast.LENGTH_SHORT).show();
                 adapter.clearSelection();
                 return;
             }
@@ -105,7 +105,7 @@ public class MyNFTsActivity extends AppCompatActivity{
                     if (shares.isEmpty()) {
                         et_shares.setError("必填字段");
                         et_shares.requestFocus();
-                        Toast.makeText(MyNFTsActivity.this, "请输入需要上架的NFT份数", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MyNFTsActivity.this, "请输入需要上架的RWA份数", Toast.LENGTH_SHORT).show();
                         return;
                     }
                     if (price.isEmpty()) {
@@ -125,8 +125,8 @@ public class MyNFTsActivity extends AppCompatActivity{
                         }
 
                         if (shareValue.compareTo(selected.getShares()) > 0) {
-                            et_shares.setError("超过您所拥有的NFT份数");
-                            Toast.makeText(MyNFTsActivity.this, "超过您所拥有的NFT份数", Toast.LENGTH_SHORT).show();
+                            et_shares.setError("超过您所拥有的RWA份数");
+                            Toast.makeText(MyNFTsActivity.this, "超过您所拥有的RWA份数", Toast.LENGTH_SHORT).show();
                             return;
                         }
 
@@ -167,12 +167,12 @@ public class MyNFTsActivity extends AppCompatActivity{
             int position = adapter.getSelectedPosition();
 
             if (selected == null) {
-                Toast.makeText(this, "⚠️ 请先选择要下架的NFT", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "⚠️ 请先选择要下架的RWA", Toast.LENGTH_SHORT).show();
                 return;
             }
 
             if (!selected.isListed()) {
-                Toast.makeText(this, "此NFT未上架", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "此RWA未上架", Toast.LENGTH_SHORT).show();
                 adapter.clearSelection();
                 return;
             }
@@ -214,7 +214,7 @@ public class MyNFTsActivity extends AppCompatActivity{
             if(result == null){
                 runOnUiThread(() ->
                         Toast.makeText(MyNFTsActivity.this,
-                                "fetchMyNFTs失败，服务器返回数据为空:",
+                                "fetchMyRWAs失败，服务器返回数据为空:",
                                 Toast.LENGTH_LONG).show()
                 );
                 return;
@@ -247,7 +247,7 @@ public class MyNFTsActivity extends AppCompatActivity{
 
                         runOnUiThread(() -> {
                             if (nftList.isEmpty()) {
-                                Toast.makeText(MyNFTsActivity.this, "暂无NFT数据", Toast.LENGTH_LONG).show();
+                                Toast.makeText(MyNFTsActivity.this, "暂无RWA数据", Toast.LENGTH_LONG).show();
                             }
                             NFTData.clear();
                             NFTData.addAll(nftList);

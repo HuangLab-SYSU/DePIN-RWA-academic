@@ -226,7 +226,7 @@ public class BuyNFTsActivity extends AppCompatActivity{
 
                         runOnUiThread(() -> {
                             if (nftList.isEmpty()) {
-                                Toast.makeText(BuyNFTsActivity.this, "暂无NFT数据", Toast.LENGTH_LONG).show();
+                                Toast.makeText(BuyNFTsActivity.this, "暂无RWA数据", Toast.LENGTH_LONG).show();
                             }
                             NFTData.clear();
                             NFTData.addAll(nftList);

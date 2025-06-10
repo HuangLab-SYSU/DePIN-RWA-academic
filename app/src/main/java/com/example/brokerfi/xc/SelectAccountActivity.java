@@ -66,7 +66,7 @@ public class SelectAccountActivity extends AppCompatActivity {
 
         List<ReturnAccountState> list = new ArrayList<>();
         List<String> validlist = new ArrayList<>();
-        if (account != null){
+        if (account != null&&!account.isEmpty()){
             String[] split = account.split(";");
             AtomicReference<ReturnAccountState> returnAccountState = new AtomicReference<>();
             for (String s : split) {
